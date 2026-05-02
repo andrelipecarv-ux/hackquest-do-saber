@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>HackQuest do Saber</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <main class="overlay">
+    <header class="top-bar" aria-label="Status do jogador">
+      <span>XP: <strong id="xp">0</strong></span>
+      <span>Vidas: <strong id="vidas">3</strong></span>
+      <span>Nível: <strong id="nivel">Aprendiz</strong></span>
+    </header>
+
+    <section id="setup" class="center-box">
+      <h1>HackQuest do Saber</h1>
+
+      <p class="subtitulo">
+        Aprenda qualquer tema como uma missão RPG
+      </p>
+
+      <input
+        id="temaInput"
+        type="text"
+        placeholder="Digite um tema. Ex: Teoria de Vídeo"
+        autocomplete="off"
+        onkeydown="if(event.key === 'Enter') iniciarJogo()"
+      />
+
+      <button type="button" onclick="iniciarJogo()">
+        Começar missão
+      </button>
+
+      <p class="credito">
+        Desenvolvido por André Filipe<br />
+        Entrega para Hackathon
+      </p>
+    </section>
+
+    <section id="game" class="center-box hidden">
+      <div id="perguntaBox">
+        <h2 id="pergunta"></h2>
+      </div>
+
+      <div id="alternativas" aria-label="Alternativas da pergunta"></div>
+
+      <p id="feedback" aria-live="polite"></p>
+
+      <button
+        id="proximaBtn"
+        type="button"
+        class="hidden"
+        onclick="proximaPergunta()"
+      >
+        Próxima pergunta
+      </button>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+</body>
+</html>
